@@ -75,6 +75,6 @@ class Allocine(NeuronModule):
 
             # TODO: Order the times.
             for times in value["scr"][0]["t"]:
-                events[value["onShow"]["movie"]["code"]]["times"].append(times["$"])
+                events[value["onShow"]["movie"]["code"]]["times"] += ", " + times["$"]
 
         return events
