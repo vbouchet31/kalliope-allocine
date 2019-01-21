@@ -1,0 +1,6 @@
+name: "allocine"
+type: "neuron"
+author: "vbouchet31"
+
+kalliope_supported_version:
+  - 0.5

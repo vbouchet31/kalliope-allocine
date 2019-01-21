@@ -1,0 +1,1 @@
+from allocine import Allocine
