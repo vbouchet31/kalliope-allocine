@@ -77,7 +77,8 @@ class Allocine(NeuronModule):
             for times in value["scr"][0]["t"]:
                 events[value["onShow"]["movie"]["code"]]["times"].append(times["$"])
 
-        for key, event in enumerate(events):
-            events[key]["times"] = ", ".join(events[key]["times"])
+        # Concat all the times as a string to ease usage in template.
+        for key, event in events.iteritems():
+            events[key]["all_times_as_string"] = ", ".join(events[key]["times"])
 
         return events
