@@ -18,6 +18,8 @@ ANDROID_USER_AGENT = 'Dalvik/1.6.0 (Linux; U; Android 4.2.2; Nexus 4 Build/JDQ39
 class Allocine(NeuronModule):
     def __init__(self, **kwargs):
         super(Allocine, self).__init__(**kwargs)
+
+        self.say({"Init Allocine"})
         # the args from the neuron configuration
         self.option = kwargs.get('option', None)
 
@@ -32,8 +34,11 @@ class Allocine(NeuronModule):
         self.theater = kwargs.get('theater', None)
 
         # Validate theater is provided for getShowTimesList option.
-        if self.option == "getShowTimesList" and self.theater is None:
-            raise MissingParameterException('[Allocine] You need to provide a theater code.')
+        if self.option == "getShowTimesList":
+            if self.theater is None:
+                raise MissingParameterException('[Allocine] You need to provide a theater code.')
+            else:
+                return self.showTimeList(self, self.theater)
 
     def doRequest(self, method, params):
         sed = time.strftime("%Y%m%d")
