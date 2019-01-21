@@ -61,7 +61,7 @@ class Allocine(NeuronModule):
     # Get today shows time in given theater.
     def showTimeList(self, theater):
         data = {"format": "json", "theaters": theater, "date": datetime.datetime.now().strftime("%Y-%m-%d")}
-        items = self.doRequest(self, "showtimelist", data)
+        items = self.doRequest("showtimelist", data)
 
         events = dict()
         for key, value in enumerate(items["feed"]["theaterShowtimes"][0]["movieShowtimes"]):
