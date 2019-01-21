@@ -38,7 +38,8 @@ class Allocine(NeuronModule):
             if self.theater is None:
                 raise MissingParameterException('[Allocine] You need to provide a theater code.')
             else:
-                return self.showTimeList(self.theater)
+                events = self.showTimeList(self.theater)
+                self.say({'events': events})
 
     def doRequest(self, method, params):
         sed = time.strftime("%Y%m%d")
