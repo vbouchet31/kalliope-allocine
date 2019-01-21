@@ -23,7 +23,7 @@ Get information about movies times in your favorite theaters.
 
 ### Get the theater code
 
-The theater code is the Allocine unique ID  which you can get from the URL of the theater page on Allocine. For example,
+The theater code is the Allocine's internal unique ID associate to the theater which you can get from the URL of the theater's page on Allocine. For example,
 "P0057" is the theater code for "Gaumont Toulouse Wilson" theater as per its page on Allocine (http://www.allocine.fr/seance/salle_gen_csalle=P0057.html).
 
 ## Return Values
@@ -39,8 +39,8 @@ The theater code is the Allocine unique ID  which you can get from the URL of th
 ---
   - name: "get-gaumont-show-time-list"
     signals:
-      - order: "Quels films au Gaumont"
-      - order: "Quel film"
+      - order: "Which movie at Gaumont"
+      - order: "Which movie"
     neurons:
       - allocine:
           theater: "P0057"
