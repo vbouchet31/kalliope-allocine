@@ -4,3 +4,8 @@ author: "vbouchet31"
 
 kalliope_supported_version:
   - 0.5
+
+tags:
+  - "allocine"
+  - "movie"
+  - "theater"
